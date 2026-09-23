@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>湖興里交通熱點</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🚦 湖興里交通熱點分析</h1>
+    <p class="subtitle">內湖區湖興里周邊幹道即時車速監測與壅塞熱點建議</p>
+  </header>
+
+  <main class="app-main">
+    <section class="panel map-panel">
+      <div id="map"></div>
+      <p class="meta-line" id="meta-line">載入中…</p>
+    </section>
+
+    <section class="panel">
+      <h2>路段狀態</h2>
+      <div id="hotspot-list" class="hotspot-list">
+        <p class="loading">載入中…</p>
+      </div>
+      <p class="disclaimer">
+        ⚠️ 本頁分析僅依據 TDX 車輛偵測器(VD)歷史平均車速,以簡單規則判斷是否為壅塞熱點,
+        <strong>不是專業交通工程分析</strong>,建議僅供參考討論。偵測器僅涵蓋湖興里周邊幹道,
+        不涵蓋里內巷弄。資料需要持續累積數天以上才有參考價值。
+      </p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>資料來源:TDX 運輸資料流通服務(Road/Traffic/Live/VD)· 純前端小專案</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="hotspot.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

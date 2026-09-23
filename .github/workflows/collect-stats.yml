@@ -1,0 +1,82 @@
+name: Collect Traffic Stats
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Poll VD speeds and update rolling hourly averages
+        env:
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+
+          TOKEN=$(curl -s -X POST "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "grant_type=client_credentials&client_id=${TDX_CLIENT_ID}&client_secret=${TDX_CLIENT_SECRET}" \
+            | jq -r .access_token)
+
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
+            echo "Failed to obtain TDX access token"
+            exit 1
+          fi
+
+          RESP=$(curl -s -H "Authorization: Bearer ${TOKEN}" \
+            "https://tdx.transportdata.tw/api/basic/v2/Road/Traffic/Live/VD/City/Taipei?%24format=JSON")
+
+          NOW_HOUR=$(TZ=Asia/Taipei date +%H)
+          NOW_DOW=$(TZ=Asia/Taipei date +%u)
+          if [ "$NOW_DOW" -ge 6 ]; then DAYTYPE="weekend"; else DAYTYPE="weekday"; fi
+          BUCKET="${DAYTYPE}-${NOW_HOUR}"
+          NOW_ISO="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          STATS_FILE="data/link-stats.json"
+          if [ ! -f "$STATS_FILE" ]; then
+            echo '{"vds":{}}' > "$STATS_FILE"
+          fi
+
+          VD_IDS=$(jq -r '.vds[].vdId' data/vd-meta.json)
+
+          for VDID in $VD_IDS; do
+            CUR_SPEED=$(echo "$RESP" | jq --arg vdid "$VDID" '
+              [.VDLives[]? | select(.VDID == $vdid) | .LinkFlows[]?.Lanes[]? |
+                select(.ErrorType == "diag0" and ((.Speed // 0) > 0)) | .Speed] as $s
+              | if ($s | length) > 0 then (($s | add) / ($s | length)) else null end
+            ')
+
+            if [ "$CUR_SPEED" != "null" ]; then
+              jq --arg vdid "$VDID" --arg bucket "$BUCKET" --argjson speed "$CUR_SPEED" --arg now "$NOW_ISO" '
+                .vds[$vdid] //= {"buckets": {}} |
+                .vds[$vdid].lastSpeed = $speed |
+                .vds[$vdid].lastUpdated = $now |
+                .vds[$vdid].buckets[$bucket] //= {"sum": 0, "count": 0} |
+                .vds[$vdid].buckets[$bucket].sum += $speed |
+                .vds[$vdid].buckets[$bucket].count += 1 |
+                .vds[$vdid].buckets[$bucket].avg = (.vds[$vdid].buckets[$bucket].sum / .vds[$vdid].buckets[$bucket].count)
+              ' "$STATS_FILE" > /tmp/stats.json && mv /tmp/stats.json "$STATS_FILE"
+            else
+              echo "No valid reading for $VDID this poll"
+            fi
+          done
+
+          jq --arg now "$NOW_ISO" '.updatedAt = $now' "$STATS_FILE" > /tmp/stats.json && mv /tmp/stats.json "$STATS_FILE"
+
+          cat "$STATS_FILE"
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/link-stats.json
+          git diff --cached --quiet || git commit -m "Update traffic stats [skip ci]"
+          git push
