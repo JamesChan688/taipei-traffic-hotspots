@@ -1,0 +1,22 @@
+name: Debug VD Metadata
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check
+        env:
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          TOKEN=$(curl -s -X POST "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "grant_type=client_credentials&client_id=${TDX_CLIENT_ID}&client_secret=${TDX_CLIENT_SECRET}" \
+            | jq -r .access_token)
+
+          echo "--- Static VD metadata for Taipei (top 2) ---"
+          curl -s -H "Authorization: Bearer ${TOKEN}" \
+            "https://tdx.transportdata.tw/api/basic/v2/Road/Traffic/VD/City/Taipei?%24top=2&%24format=JSON" -o /tmp/meta.json
+          wc -c < /tmp/meta.json
+          jq '.' /tmp/meta.json
