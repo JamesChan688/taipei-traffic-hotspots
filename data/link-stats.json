@@ -173,13 +173,13 @@
           "avg": 49.33333333333333
         },
         "weekend-12": {
-          "sum": 38,
-          "count": 1,
-          "avg": 38
+          "sum": 75.8,
+          "count": 2,
+          "avg": 37.9
         }
       },
-      "lastSpeed": 38,
-      "lastUpdated": "2026-10-03T04:09:50Z"
+      "lastSpeed": 37.8,
+      "lastUpdated": "2026-10-03T04:39:55Z"
     },
     "VQKWL40": {
       "buckets": {
@@ -359,13 +359,13 @@
           "avg": 49.3
         },
         "weekend-12": {
-          "sum": 47.166666666666664,
-          "count": 1,
-          "avg": 47.166666666666664
+          "sum": 95.36666666666667,
+          "count": 2,
+          "avg": 47.68333333333334
         }
       },
-      "lastSpeed": 47.166666666666664,
-      "lastUpdated": "2026-10-03T04:09:50Z"
+      "lastSpeed": 48.2,
+      "lastUpdated": "2026-10-03T04:39:55Z"
     },
     "VQKWL60": {
       "buckets": {
@@ -545,13 +545,13 @@
           "avg": 28
         },
         "weekend-12": {
-          "sum": 41.25,
-          "count": 1,
-          "avg": 41.25
+          "sum": 75.5,
+          "count": 2,
+          "avg": 37.75
         }
       },
-      "lastSpeed": 41.25,
-      "lastUpdated": "2026-10-03T04:09:50Z"
+      "lastSpeed": 34.25,
+      "lastUpdated": "2026-10-03T04:39:55Z"
     },
     "VQKWL61": {
       "buckets": {
@@ -731,13 +731,13 @@
           "avg": 43.25
         },
         "weekend-12": {
-          "sum": 42.75,
-          "count": 1,
-          "avg": 42.75
+          "sum": 87.25,
+          "count": 2,
+          "avg": 43.625
         }
       },
-      "lastSpeed": 42.75,
-      "lastUpdated": "2026-10-03T04:09:50Z"
+      "lastSpeed": 44.5,
+      "lastUpdated": "2026-10-03T04:39:55Z"
     },
     "VSQYA00": {
       "buckets": {
@@ -912,14 +912,14 @@
           "avg": 44
         },
         "weekend-12": {
-          "sum": 41,
-          "count": 1,
-          "avg": 41
+          "sum": 77.5,
+          "count": 2,
+          "avg": 38.75
         }
       },
-      "lastSpeed": 41,
-      "lastUpdated": "2026-10-03T04:09:50Z"
+      "lastSpeed": 36.5,
+      "lastUpdated": "2026-10-03T04:39:55Z"
     }
   },
-  "updatedAt": "2026-10-03T04:09:50Z"
+  "updatedAt": "2026-10-03T04:39:55Z"
 }
