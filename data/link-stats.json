@@ -585,9 +585,9 @@
           "avg": 40
         },
         "weekend-02": {
-          "sum": 34,
-          "count": 1,
-          "avg": 34
+          "sum": 83.5,
+          "count": 2,
+          "avg": 41.75
         },
         "weekend-03": {
           "sum": 80,
@@ -685,8 +685,8 @@
           "avg": 44.5
         }
       },
-      "lastSpeed": 44.5,
-      "lastUpdated": "2026-10-03T15:00:08Z"
+      "lastSpeed": 49.5,
+      "lastUpdated": "2026-10-03T18:54:55Z"
     },
     "VQKWL61": {
       "buckets": {
@@ -1162,5 +1162,5 @@
       "lastUpdated": "2026-10-03T15:00:08Z"
     }
   },
-  "updatedAt": "2026-10-03T15:00:08Z"
+  "updatedAt": "2026-10-03T18:54:55Z"
 }
