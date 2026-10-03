@@ -196,10 +196,15 @@
           "sum": 88.4,
           "count": 2,
           "avg": 44.2
+        },
+        "weekend-17": {
+          "sum": 31.75,
+          "count": 1,
+          "avg": 31.75
         }
       },
-      "lastSpeed": 41.4,
-      "lastUpdated": "2026-10-03T08:39:56Z"
+      "lastSpeed": 31.75,
+      "lastUpdated": "2026-10-03T09:07:10Z"
     },
     "VQKWL40": {
       "buckets": {
@@ -402,10 +407,15 @@
           "sum": 102.25,
           "count": 2,
           "avg": 51.125
+        },
+        "weekend-17": {
+          "sum": 39.6,
+          "count": 1,
+          "avg": 39.6
         }
       },
-      "lastSpeed": 47.25,
-      "lastUpdated": "2026-10-03T08:39:56Z"
+      "lastSpeed": 39.6,
+      "lastUpdated": "2026-10-03T09:07:10Z"
     },
     "VQKWL60": {
       "buckets": {
@@ -608,10 +618,15 @@
           "sum": 69.5,
           "count": 2,
           "avg": 34.75
+        },
+        "weekend-17": {
+          "sum": 35.5,
+          "count": 1,
+          "avg": 35.5
         }
       },
-      "lastSpeed": 39.25,
-      "lastUpdated": "2026-10-03T08:39:56Z"
+      "lastSpeed": 35.5,
+      "lastUpdated": "2026-10-03T09:07:10Z"
     },
     "VQKWL61": {
       "buckets": {
@@ -814,10 +829,15 @@
           "sum": 87.66666666666666,
           "count": 2,
           "avg": 43.83333333333333
+        },
+        "weekend-17": {
+          "sum": 43,
+          "count": 1,
+          "avg": 43
         }
       },
-      "lastSpeed": 45,
-      "lastUpdated": "2026-10-03T08:39:56Z"
+      "lastSpeed": 43,
+      "lastUpdated": "2026-10-03T09:07:10Z"
     },
     "VSQYA00": {
       "buckets": {
@@ -1015,11 +1035,16 @@
           "sum": 76.5,
           "count": 2,
           "avg": 38.25
+        },
+        "weekend-17": {
+          "sum": 37,
+          "count": 1,
+          "avg": 37
         }
       },
-      "lastSpeed": 42,
-      "lastUpdated": "2026-10-03T08:39:56Z"
+      "lastSpeed": 37,
+      "lastUpdated": "2026-10-03T09:07:10Z"
     }
   },
-  "updatedAt": "2026-10-03T08:39:56Z"
+  "updatedAt": "2026-10-03T09:07:10Z"
 }
