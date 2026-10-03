@@ -42,19 +42,21 @@ async function main() {
     linkStats = { vds: {} };
   }
 
-  const map = L.map("map").setView([vdMeta.center.lat, vdMeta.center.lon], 15);
+  const map = L.map("map");
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: "&copy; OpenStreetMap contributors",
   }).addTo(map);
 
-  L.rectangle(
+  const boundsRect = L.rectangle(
     [
       [vdMeta.boundingBox.minLat, vdMeta.boundingBox.minLon],
       [vdMeta.boundingBox.maxLat, vdMeta.boundingBox.maxLon],
     ],
     { color: "#e8663c", weight: 1, fillOpacity: 0.05, dashArray: "4 4" }
   ).addTo(map);
+
+  map.fitBounds(boundsRect.getBounds(), { padding: [24, 24] });
 
   hotspotList.innerHTML = "";
 
