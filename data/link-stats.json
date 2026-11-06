@@ -123,9 +123,9 @@
           "avg": 42.66388888888889
         },
         "weekend-00": {
-          "sum": 90.73333333333333,
-          "count": 2,
-          "avg": 45.36666666666667
+          "sum": 138.48333333333335,
+          "count": 3,
+          "avg": 46.16111111111112
         },
         "weekend-03": {
           "sum": 114.2,
@@ -223,8 +223,8 @@
           "avg": 56.53333333333333
         }
       },
-      "lastSpeed": 54,
-      "lastUpdated": "2026-11-06T08:08:50Z"
+      "lastSpeed": 47.75,
+      "lastUpdated": "2026-11-06T16:04:23Z"
     },
     "VQKWL40": {
       "buckets": {
@@ -349,9 +349,9 @@
           "avg": 47.42638888888888
         },
         "weekend-00": {
-          "sum": 115.6,
-          "count": 2,
-          "avg": 57.8
+          "sum": 169.39999999999998,
+          "count": 3,
+          "avg": 56.46666666666666
         },
         "weekend-02": {
           "sum": 38,
@@ -454,8 +454,8 @@
           "avg": 47.35
         }
       },
-      "lastSpeed": 42,
-      "lastUpdated": "2026-11-06T08:08:50Z"
+      "lastSpeed": 53.8,
+      "lastUpdated": "2026-11-06T16:04:23Z"
     },
     "VQKWL60": {
       "buckets": {
@@ -580,9 +580,9 @@
           "avg": 40.69166666666667
         },
         "weekend-00": {
-          "sum": 40,
-          "count": 1,
-          "avg": 40
+          "sum": 63,
+          "count": 2,
+          "avg": 31.5
         },
         "weekend-02": {
           "sum": 83.5,
@@ -685,8 +685,8 @@
           "avg": 51.75
         }
       },
-      "lastSpeed": 39.5,
-      "lastUpdated": "2026-11-06T08:08:50Z"
+      "lastSpeed": 23,
+      "lastUpdated": "2026-11-06T16:04:23Z"
     },
     "VQKWL61": {
       "buckets": {
@@ -811,9 +811,9 @@
           "avg": 41.15972222222222
         },
         "weekend-00": {
-          "sum": 37,
-          "count": 1,
-          "avg": 37
+          "sum": 83.66666666666666,
+          "count": 2,
+          "avg": 41.83333333333333
         },
         "weekend-02": {
           "sum": 49.5,
@@ -916,8 +916,8 @@
           "avg": 53.5
         }
       },
-      "lastSpeed": 39.5,
-      "lastUpdated": "2026-11-06T08:08:50Z"
+      "lastSpeed": 46.666666666666664,
+      "lastUpdated": "2026-11-06T16:04:23Z"
     },
     "VSQYA00": {
       "buckets": {
@@ -1296,10 +1296,15 @@
           "sum": 105,
           "count": 2,
           "avg": 52.5
+        },
+        "weekend-00": {
+          "sum": 48.5,
+          "count": 1,
+          "avg": 48.5
         }
       },
-      "lastSpeed": 46,
-      "lastUpdated": "2026-11-06T08:08:50Z"
+      "lastSpeed": 48.5,
+      "lastUpdated": "2026-11-06T16:04:23Z"
     },
     "VRGUF00": {
       "buckets": {
@@ -1447,11 +1452,16 @@
           "sum": 44,
           "count": 1,
           "avg": 44
+        },
+        "weekend-00": {
+          "sum": 40,
+          "count": 1,
+          "avg": 40
         }
       },
       "lastSpeed": 40,
-      "lastUpdated": "2026-11-06T08:08:50Z"
+      "lastUpdated": "2026-11-06T16:04:23Z"
     }
   },
-  "updatedAt": "2026-11-06T08:08:50Z"
+  "updatedAt": "2026-11-06T16:04:23Z"
 }
