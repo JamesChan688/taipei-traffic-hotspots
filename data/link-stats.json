@@ -1459,9 +1459,9 @@
           "avg": 46.75
         },
         "weekday-04": {
-          "sum": 84,
-          "count": 2,
-          "avg": 42
+          "sum": 128,
+          "count": 3,
+          "avg": 42.666666666666664
         },
         "weekend-00": {
           "sum": 40,
@@ -1484,9 +1484,9 @@
           "avg": 56.5
         }
       },
-      "lastSpeed": 47.5,
-      "lastUpdated": "2026-11-10T12:51:33Z"
+      "lastSpeed": 44,
+      "lastUpdated": "2026-11-10T20:07:15Z"
     }
   },
-  "updatedAt": "2026-11-10T12:51:33Z"
+  "updatedAt": "2026-11-10T20:07:15Z"
 }
