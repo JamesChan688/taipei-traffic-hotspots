@@ -1032,9 +1032,9 @@
           "avg": 28
         },
         "weekday-03": {
-          "sum": 237,
-          "count": 8,
-          "avg": 29.625
+          "sum": 255,
+          "count": 9,
+          "avg": 28.333333333333332
         },
         "weekday-04": {
           "sum": 342,
@@ -1167,8 +1167,8 @@
           "avg": 24
         }
       },
-      "lastSpeed": 24,
-      "lastUpdated": "2026-11-25T09:31:10Z"
+      "lastSpeed": 18,
+      "lastUpdated": "2026-11-25T19:40:56Z"
     },
     "VQEUU60": {
       "buckets": {
@@ -1548,5 +1548,5 @@
       "lastUpdated": "2026-11-25T09:31:10Z"
     }
   },
-  "updatedAt": "2026-11-25T09:31:10Z"
+  "updatedAt": "2026-11-25T19:40:56Z"
 }
